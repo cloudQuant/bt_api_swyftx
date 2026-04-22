@@ -11,9 +11,17 @@ pip install bt_api_swyftx
 ```
 
 ```python
-from bt_api_swyftx import SwyftxApi
-feed = SwyftxApi(api_key="your_key", secret="your_secret")
-ticker = feed.get_ticker("BTCUSDT")
+from bt_api_py import BtApi
+
+api = BtApi(exchange_kwargs={
+    "SWYFTX___SPOT": {
+        "api_key": "your_key",
+        "secret": "your_secret",
+    }
+})
+
+ticker = api.get_tick("SWYFTX___SPOT", "BTCUSDT")
+balance = api.get_balance("SWYFTX___SPOT")
 ```
 
 ## 中文
@@ -27,9 +35,17 @@ pip install bt_api_swyftx
 ```
 
 ```python
-from bt_api_swyftx import SwyftxApi
-feed = SwyftxApi(api_key="your_key", secret="your_secret")
-ticker = feed.get_ticker("BTCUSDT")
+from bt_api_py import BtApi
+
+api = BtApi(exchange_kwargs={
+    "SWYFTX___SPOT": {
+        "api_key": "your_key",
+        "secret": "your_secret",
+    }
+})
+
+ticker = api.get_tick("SWYFTX___SPOT", "BTCUSDT")
+balance = api.get_balance("SWYFTX___SPOT")
 ```
 
 ## API Reference
