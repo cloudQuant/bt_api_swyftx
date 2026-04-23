@@ -141,9 +141,7 @@ class SwyftxRequestData(Feed):
         )
         return path, {"depth": count}, extra_data
 
-    def _get_kline(
-        self, symbol: str, period: str, count: int = 20, extra_data: Any = None, **kwargs: Any
-    ):
+    def _get_kline(self, symbol: str, period: str, count: int = 20, extra_data: Any = None, **kwargs: Any):
         path = self._params.get_rest_path("get_kline", symbol=self._params.get_symbol(symbol))
         extra_data = extra_data or {}
         extra_data.update(
